@@ -973,10 +973,10 @@ pub fn get_api_server(api: String, custom: String) -> String {
         res.pop();
     }
     if res.starts_with("https")
-        && res.ends_with(":52114")
-        && get_builtin_option(keys::OPTION_ALLOW_HTTPS_52114) != "Y"
+        && res.ends_with(":40080")
+        && get_builtin_option(keys::OPTION_ALLOW_HTTPS_21114) != "Y"
     {
-        return res.replace(":52114", "");
+        return res.replace(":40080", "");
     }
     res
 }
@@ -1004,7 +1004,7 @@ fn get_api_server_(api: String, custom: String) -> String {
             return format!("http://{}", s);
         }
     }
-    "http://rst.pntc.siyouyun.cc".to_owned()
+    "http://rust.pntc.siyouyun.cc".to_owned()
 }
 
 #[inline]
